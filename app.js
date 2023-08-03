@@ -81,6 +81,10 @@ app.get("/registertologin",function(req,res){
   res.render("registertologin");
 });
 
+app.get("/error",function(req,res){
+  res.render("error");
+});
+
 app.get("/secrets",function(req,res){
   if(req.isAuthenticated()){
       res.render("secrets");
@@ -124,7 +128,7 @@ app.get("/logout", (req, res) => {
 User.register({username: req.body.username}, req.body.password, function(err,user){
   if(err){
     console.log(err);
-    res.redirect("/register");
+    res.redirect("/error");
   }else{
     passport.authenticate("local")(req, res, function(){
       res.redirect("/secrets");
