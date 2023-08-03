@@ -1,2 +1,3 @@
-# Techlock
-Techlock Password manager
+# Secret-lock
+
+
